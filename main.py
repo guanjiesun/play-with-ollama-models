@@ -1,9 +1,11 @@
 from ollama import chat
+from pathlib import Path
 
 def main():
+    image_path = Path('image.png')
     stream = chat(
-        model='qwen3:8b',
-        messages=[{'role': 'user', 'content': '如何将 AI 与 RPA 融合？'}],
+        model='qwen3.5:9b',
+        messages=[{'role': 'user', 'content': '提取图片中的文字', 'images': [image_path]}],
         stream=True,
     )
 
