@@ -5,7 +5,7 @@ def main():
     """
     extract text from an image file
     """
-    image_path = Path('image.png')
+    image_path = Path('../static/image.png')
     stream = chat(
         model='qwen3.5:9b',
         messages=[{'role': 'user', 'content': '提取图片中的文字', 'images': [image_path]}],
