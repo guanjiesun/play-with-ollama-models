@@ -12,7 +12,7 @@ def main():
     get streaming response from local LLM model
     """
     stream = chat(
-        model='qwen3.5:9b',
+        model='qwen3.5:2b',
         messages=[{'role': 'user', 'content': 'RPA 工程师的典型工作流'}],
         stream=True,
     )
@@ -21,4 +21,7 @@ def main():
         print(chunk['message']['content'], end='', flush=True)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(e)
